@@ -31,17 +31,9 @@ let clone1 = deepClone({ ...userObject });
 let clone2 = deepClone({ ...userObject });
 let clone3 = deepClone({ ...userObject });
 
-const clones = [clone1, clone2, clone3];
-
-clones.sort((a, b) => (a.age > b.age ? 1 : -1));
-
-console.log(clones);
-
 // Store the cloned objects in an array
-const clonedObjects = [clone1, clone2, clone3];
-
+const clones = [clone1, clone2, clone3];
 // Sort the array of cloned objects based on the 'age' property in ascending order
-clonedObjects.sort((a, b) => a.age - b.age);
-
+clones.sort((a, b) => (a.age > b.age ? 1 : -1));
 // Log the sorted array to the console
-console.log(clonedObjects);
+console.log(clones);
