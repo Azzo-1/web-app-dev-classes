@@ -1,4 +1,4 @@
-// Challenge 2 Starter
+// Challenge 2
 const userObject = {
   firstName: "John",
   lastName: "Doe",
@@ -15,6 +15,11 @@ const userObject = {
     linkedIn: "linkedin.com/in/johndoe",
   },
   isEmployed: true,
+
+  // Method to change the age property
+  changeAge(newAge) {
+    this.age = newAge;
+  },
 };
 
 // Clone the complexObject three times using the spread operator to clone.
@@ -33,7 +38,10 @@ clones.sort((a, b) => (a.age > b.age ? 1 : -1));
 console.log(clones);
 
 // Store the cloned objects in an array
+const clonedObjects = [clone1, clone2, clone3];
 
 // Sort the array of cloned objects based on the 'age' property in ascending order
+clonedObjects.sort((a, b) => a.age - b.age);
 
 // Log the sorted array to the console
+console.log(clonedObjects);
