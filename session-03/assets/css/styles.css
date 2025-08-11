@@ -4,8 +4,9 @@ body {
 
 #save-me {
   display: flex;
+  margin: 0 auto;
   flex-direction: column;
-  width: 33%;
+  width: 70%;
 }
 
 button {
