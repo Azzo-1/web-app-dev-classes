@@ -5,16 +5,50 @@
  * @param {Object} options  Component options
  */
 
+let MyListComponent = function (selector, options) {
+  this.element = document.querySelector(selector);
+  this.data = options.data;
+  this.template = options.template;
+};
+
 /**
  * Render a new UI
  */
-
+MyListComponent.prototype.render = function () {
+  this.element.innerHTML = this.template(this.data);
+};
 // The list of books
 
+let app = new MyListComponent("#list", {
+  data: {
+    books: [
+      "Harry Potter I",
+      "Harry Potter II",
+      "Harry Potter III",
+      "Harry Potter IV",
+      "Harry Potter V",
+      "Harry Potter VI",
+      "Harry Potter VII",
+    ],
+  },
+
+  template: function (data) {
+    let html =
+      "<ul>" +
+      data.books
+        // Loops throught the props array wrapping each item in a <li>
+        .map(function (book) {
+          return "<li>" + book + "</li>";
+        })
+        .join("") +
+      "</ul>";
+    return html;
+  },
+});
 // Render the list
 app.render();
 
 // Update the UI
-app.data.books.push("Harry Potter IV");
-app.data.books.push("Harry Potter V");
-app.render();
+// app.data.books.push("Harry Potter IV");
+// app.data.books.push("Harry Potter V");
+// app.render();
