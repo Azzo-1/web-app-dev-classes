@@ -26,6 +26,11 @@ function clearStorage() {
   for (let field of fields) {
     localStorage.removeItem(prefix + field.id);
   }
+  let fields = form.elements;
+
+  for (let field of fields) {
+    localStorage.removeItem(prefix + field.id);
+  }
 }
 
 /**
