@@ -1,5 +1,6 @@
 <html>
   <body>
+    <!-- code -->
     <!-- Chapter 4 code -->
     <div id="app"></div>
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
@@ -22,6 +23,20 @@
         );
       }
 
+      function PokemonList({ pokedex }) {
+        //template
+        return (
+          <>
+          <h1>Pokemon 1st gen</h1>
+            <ol>
+              {pokedex.map((pokemon)=> (
+                  <li key={pokemon.id}>{pokemon.name}</li>
+                ))}
+            </ol>
+            </>
+        );
+      }
+
       // Usage example
       function App() {
         const items = [
@@ -31,9 +46,18 @@
         ];
 
         // Your code goes here to return JSX
+
+        const pokedex = [
+        { id: 1, name: "Venasaur" },
+        { id: 2, name: "Blastoise"},
+        { id: 3, name: "Charizard"},
+        ];
         // Hint: you will need to loop through these items
         // render
-        return <ItemList items={items} />
+        return <>
+        <ItemList items={items} />
+        <PokemonList pokedex={pokedex} />
+        </>;
       }
     </script>
   </body>
