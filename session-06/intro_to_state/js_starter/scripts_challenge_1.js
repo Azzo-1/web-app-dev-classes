@@ -19,3 +19,4 @@ let addBook = function (book) {
 let book = "Harry Potter IV";
 // render
 addBook(book);
+addBook(book1);
