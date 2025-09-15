@@ -33,9 +33,9 @@
         };
 
         const userObject2 = {
-          firstName: "John",
+          firstName: "Alice",
           lastName: "Doe",
-          age: 30,
+          age: 32,
           isStudent: false,
           address: {
             street: "123 Main St",
@@ -50,6 +50,12 @@
           isEmployed: true,
         };
 
+        return (
+          <>
+          <User {...userObject}/>
+          <User {...userObject2}/>
+          </>
+        )
         // Destructure the props and render out both users in their own component in a fragment
       }
 
@@ -58,10 +64,7 @@
         firstName,
         lastName,
         age,
-        address,
         skills,
-        socialProfiles,
-        isEmployed,
       }) {
         console.log(firstName);
         return (

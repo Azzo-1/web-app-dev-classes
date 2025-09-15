@@ -16,6 +16,7 @@
       function UserList() {
         const userList = [
           {
+            id: 1,
             firstName: "John",
             lastName: "Doe",
             age: 30,
@@ -33,6 +34,7 @@
             isEmployed: true,
           },
           {
+            id: 2,
             firstName: "Bianca",
             lastName: "Doe",
             age: 30,
@@ -42,7 +44,7 @@
               city: "Perth",
               zipCode: "6000",
             },
-            skills: ["JavaScript", "HTML", "CSS"],
+            skills: ["JavaScript", "HTML"],
             socialProfiles: {
               twitter: "@biancadoe",
               linkedIn: "linkedin.com/in/biancadoe",
@@ -50,6 +52,7 @@
             isEmployed: true,
           },
           {
+            id: 3,
             firstName: "Clare",
             lastName: "Doe",
             age: 30,
@@ -73,7 +76,24 @@
         // List example
         return (
           // Dont foget to wrap you list in the <ul> or <ol>tag
-          <></>
+          <>
+          <h2>User List</h2>
+          <ul key="user_list">
+          {userList.map((user) => (
+            <ul key={user.id}>
+              <li key={user.firstName}>{user.firstName} {user.lastName}</li>
+              <ul>
+              <li key={user.age}>Age: {user.age}</li>
+              <li key={user.skills}>Skills: 
+                <ul key={user.id.skills}> 
+                  {user.skills.map((skill) => (
+                  <li key={skill}> {skill}</li>
+              ))}</ul></li>
+              </ul>
+              </ul>
+          ))}
+            </ul>
+          </>
         );
       }
       // Correct usage of ReactDOM.createRoot
